@@ -1,10 +1,3 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`💚 💚 💚 Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🚫 🚫 🚫 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
 let eqArrays = function(array1, array2) {
   //check if arrays are the same length
   if (array1.length !== array2.length) {
@@ -49,18 +42,20 @@ const eqObjects = function(object1, object2) {
   
   return true;
 };
-const ab = { a: "1", b: "2" }; // first object
-const ba = { b: "2", a: "1" }; // second object
-const abc = { a: "1", b: "2", c: "3" };
 
-assertEqual(eqObjects(ab, ba),true); // => true
-console.log(eqObjects(ab, ba));
-console.log(eqObjects(ab, abc));
-assertEqual(eqObjects(ab, abc), false); // => false
+const assertObjectsEqual = function(actual, expected) {
+  const inspect = require('util').inspect; // <= add this line
+  if (eqObjects(actual, expected)) {
+    return `💚 💚 💚 Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`;
+  } else {
+    return `🚫 🚫 🚫 Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`;
+  }
+};
 
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
-console.log(eqObjects(cd, dc)); // => true
+console.log(assertObjectsEqual(cd, dc)); // => true
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
-console.log(eqObjects(cd, cd2)); // => false
+console.log(assertObjectsEqual(cd, cd2)); // => false
+
