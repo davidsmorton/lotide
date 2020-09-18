@@ -17,32 +17,32 @@ let eqArrays = function(array1, array2) {
 let assertArraysEqual = function(array1, array2) {
   //check if arrays are the same length
   if (eqArrays(array1, array2)) {
-    return `💚 💚 💚 Assertion Passed: ${array1} === ${array2}`;;
+    return `💚 💚 💚 Assertion Passed: ${array1} === ${array2}`;
     
   } else {
-    return `🚫 🚫 🚫 Assertion Failed: ${array1} !== ${array2}`;;
+    return `🚫 🚫 🚫 Assertion Failed: ${array1} !== ${array2}`;
   }
 
 };
 
 const takeUntil = function(array, callback) {
-    // console.log("array: ", array);
-    //console.log("callback: ", callback);
-    let results = []
-    for (let item of array) {
-      if (callback(item)) {
-        return results;
-      } else {
-        results.push(item);
-      }
+  // console.log("array: ", array);
+  //console.log("callback: ", callback);
+  let results = [];
+  for (let item of array) {
+    if (callback(item)) {
+      return results;
+    } else {
+      results.push(item);
     }
-    return results; 
-      // console.log('item BEFORE:' , item)
-      // console.log('item AFTER:' , callback(item));
-      // console.log('---');
-    }
+  }
+  return results;
+  // console.log('item BEFORE:' , item)
+  // console.log('item AFTER:' , callback(item));
+  // console.log('---');
+};
     
-  // ...
+// ...
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
 const results1 = takeUntil(data1, x => x < 0);
 console.log(results1);
