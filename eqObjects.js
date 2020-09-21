@@ -1,11 +1,11 @@
-const assertEqual = function(actual, expected) {
+const assertEqual = function (actual, expected) {
   if (actual === expected) {
     console.log(`💚 💚 💚 Assertion Passed: ${actual} === ${expected}`);
   } else {
     console.log(`🚫 🚫 🚫 Assertion Failed: ${actual} !== ${expected}`);
   }
 };
-let eqArrays = function(array1, array2) {
+let eqArrays = function (array1, array2) {
   //check if arrays are the same length
   if (array1.length !== array2.length) {
     return false;
@@ -21,8 +21,8 @@ let eqArrays = function(array1, array2) {
 };
 // Returns true if both objects have identical keys with identical values.
 // Otherwise you get back a big fat false!
-const eqObjects = function(object1, object2) {
-  const firstObjectKeys  = Object.keys(object1);
+const eqObjects = function (object1, object2) {
+  const firstObjectKeys = Object.keys(object1);
   const secondObjectKeys = Object.keys(object2);
   if (firstObjectKeys.length !== secondObjectKeys.length) {
     return false;
@@ -30,7 +30,6 @@ const eqObjects = function(object1, object2) {
   //o1 and o2 has same length, which means amount of keys of both o1 and o2 are same
   // that why you only need one loop
 
-  
   for (let key of firstObjectKeys) {
     // check if the two object only contain primitive values
     // if so compare..
@@ -40,20 +39,20 @@ const eqObjects = function(object1, object2) {
       if (!eqArrays(object1[key], object2[key])) {
         return false;
       }
-    } else if (object1[key] !==  object2[key]) {
+    } else if (object1[key] !== object2[key]) {
       return false;
     }
   }
   //Array.isArray(val1) => true && Array.isArray(val2) => false
   //then the whole statement evalute to fasle
-  
+
   return true;
 };
 const ab = { a: "1", b: "2" }; // first object
 const ba = { b: "2", a: "1" }; // second object
 const abc = { a: "1", b: "2", c: "3" };
 
-assertEqual(eqObjects(ab, ba),true); // => true
+assertEqual(eqObjects(ab, ba), true); // => true
 console.log(eqObjects(ab, ba));
 console.log(eqObjects(ab, abc));
 assertEqual(eqObjects(ab, abc), false); // => false

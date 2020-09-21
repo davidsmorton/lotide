@@ -17,13 +17,14 @@ let eqArrays = function(array1, array2) {
 let assertArraysEqual = function(array1, array2) {
   //check if arrays are the same length
   if (eqArrays(array1, array2)) {
-    return "These Arrays match";
+    return `💚 💚 💚 Assertion Passed: ${array1} === ${array2}`;;
     
   } else {
-    return "These arrays dont match";
+    return `🚫 🚫 🚫 Assertion Failed: ${array1} !== ${array2}`;;
   }
 
 };
+
 console.log(assertArraysEqual([1, 2, 3], [1, 2, 3])); // => true
 console.log(assertArraysEqual([1, 2, 3], [3, 2, 1])); // => false
 console.log(assertArraysEqual(["1", "2", "3"], ["1", "2", "3"])); // => true
