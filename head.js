@@ -9,6 +9,7 @@ const head = function(array) {
 };
 
 module.exports = head;
+//module.exports = assertEqual;
 
 //console.log(head(['5'])); used to check test code
 
