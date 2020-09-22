@@ -6,26 +6,26 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-const findKeyByValue = function (object, value){
-  let array = Object.keys(object); 
-    for (letkey of array) {
-      if (object[key] === value) {
-        return key;
-      }
+const findKeyByValue = function(object, value) {
+  let array = Object.keys(object);
+  for (let key of array) {
+    if (object[key] === value) {
+      return key;
     }
-    // the function ends with returing 'undefind'
-  };
+  }
+  // the function ends with returing 'undefind'
+};
 
-  // for (let i = 0; i < array.length; i++) {
-      // let element = array[i];
+// for (let i = 0; i < array.length; i++) {
+// let element = array[i];
 
-  //}
+//}
 
 // array = [sci_fi, comedy, drama];
 
-// object[key] 
+// object[key]
 //bestTVShowsByGenre['sci_fi'] = ?
-const bestTVShowsByGenre = { 
+const bestTVShowsByGenre = {
   sci_fi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
   drama:  "The Wire"

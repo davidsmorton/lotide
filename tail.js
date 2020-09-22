@@ -13,7 +13,7 @@ const tail = function(array) {
 
 
 module.exports = tail;
-//module.exports = assertEqual;
+module.exports = assertEqual;
 
 
 // result = tail(["Hello"]);

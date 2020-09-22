@@ -25,21 +25,21 @@ let assertArraysEqual = function(array1, array2) {
 
 };
 
-let letterPositions = function (someString) {
+let letterPositions = function(someString) {
   const results = {};
   
 
-  for (let i = 0; i < someString.length; i++){
+  for (let i = 0; i < someString.length; i++) {
     console.log([i]);
-      if (results[someString[i]]) {
-        results[someString[i]].push(i) 
-       } else {
-         results[someString[i]] = [i];
+    if (results[someString[i]]) {
+      results[someString[i]].push(i);
+    } else {
+      results[someString[i]] = [i];
        
-         } 
- }
- delete results[" "];
- return results;
-}
+    }
+  }
+  delete results[" "];
+  return results;
+};
 console.log(assertArraysEqual(letterPositions("Hello"), { H: [ 0 ], e: [1], l:[2,3], O: [5]}));
 

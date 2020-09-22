@@ -9,13 +9,13 @@ describe("#tail", () => {
   });
 
   it("returns '['Lighthouse']' for [0]", () => {
-    assert.deepEqual(tail(["Hello", "Lighthouse", "Labs"])[0], "Lighthouse"); 
+    assert.deepEqual(tail(["Hello", "Lighthouse", "Labs"])[0], "Lighthouse");
     // assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
-  }); 
+  });
 
   it("returns 'Labs' for [1]", () => {
-   assert.deepEqual(tail(["Hello", "Lighthouse", "Labs"])[1], "Labs"); 
-  }); 
+    assert.deepEqual(tail(["Hello", "Lighthouse", "Labs"])[1], "Labs");
+  });
   
   it("returns 3 for ['Hello', 'Lighthouse', 'Labs']", () => {
     assert.lengthOf(["Hello", "Lighthouse", "Labs"], 3);
