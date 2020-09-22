@@ -10,7 +10,7 @@ const head = function(array) {
 
 module.exports = head;
 
-
+console.log(head(['5']));
 
 
 
